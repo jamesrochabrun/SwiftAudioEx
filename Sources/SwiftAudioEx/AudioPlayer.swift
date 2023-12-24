@@ -294,7 +294,6 @@ public class AudioPlayer: AVPlayerWrapperDelegate {
             MediaItemProperty.title(item.getTitle()),
             MediaItemProperty.albumTitle(item.getAlbumTitle()),
         ])
-        loadArtwork(forItem: item)
     }
 
     /**
@@ -329,17 +328,6 @@ public class AudioPlayer: AVPlayerWrapperDelegate {
         nowPlayingInfoController.set(
             keyValue: NowPlayingInfoProperty.elapsedPlaybackTime(seconds)
         )
-    }
-
-    private func loadArtwork(forItem item: AudioItem) {
-        item.getArtwork { (image) in
-            if let image = image {
-                let artwork = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { _ in image })
-                self.nowPlayingInfoController.set(keyValue: MediaItemProperty.artwork(artwork))
-            } else {
-                self.nowPlayingInfoController.set(keyValue: MediaItemProperty.artwork(nil))
-            }
-        }
     }
 
     private func setTimePitchingAlgorithmForCurrentItem() {

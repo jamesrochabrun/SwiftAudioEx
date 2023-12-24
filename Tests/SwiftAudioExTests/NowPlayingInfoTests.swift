@@ -28,7 +28,6 @@ class NowPlayingInfoTests: XCTestCase {
         XCTAssertEqual(nowPlayingController.getTitle(), item.getTitle())
         XCTAssertEqual(nowPlayingController.getArtist(), item.getArtist())
         XCTAssertEqual(nowPlayingController.getAlbumTitle(), item.getAlbumTitle())
-        XCTAssertNotNil(nowPlayingController.getArtwork())
     }
 
     func testNowPlayingInfoControllerPlaybackValuesUpdate() {

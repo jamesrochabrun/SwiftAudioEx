@@ -60,10 +60,6 @@ class NowPlayingInfoController_Mock: NowPlayingInfoControllerProtocol {
         return info[NowPlayingInfoProperty.elapsedPlaybackTime(nil).getKey()] as? Double
     }
     
-    func getArtwork() -> MPMediaItemArtwork? {
-        return info[MediaItemProperty.artwork(nil).getKey()] as? MPMediaItemArtwork
-    }
-    
     func clear() {
         info = [:]
     }
