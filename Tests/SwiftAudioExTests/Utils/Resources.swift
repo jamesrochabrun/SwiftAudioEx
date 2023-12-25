@@ -7,7 +7,7 @@ struct Source {
     static let url: URL = URL(fileURLWithPath: Source.path)
     
     static func getAudioItem() -> AudioItem {
-        return DefaultAudioItem(audioUrl: self.path, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .file, artworkUrl: "")
+       return DefaultAudioItem(id: "", audioUrl: self.path, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .file, artworkUrl: "")
     }
 }
 
@@ -16,7 +16,7 @@ struct ShortSource {
     static let url: URL = URL(fileURLWithPath: ShortSource.path)
     
     static func getAudioItem() -> AudioItem {
-       return DefaultAudioItem(audioUrl: self.path, sourceType: .file, artworkUrl: "")
+       return DefaultAudioItem(id: "", audioUrl: self.path, sourceType: .file, artworkUrl: "")
     }
 }
 
@@ -25,7 +25,7 @@ struct LongSource {
     static let url: URL = URL(fileURLWithPath: LongSource.path)
     
     static func getAudioItem() -> AudioItem {
-       return DefaultAudioItem(audioUrl: self.path, sourceType: .file, artworkUrl: "")
+       return DefaultAudioItem(id: "", audioUrl: self.path, sourceType: .file, artworkUrl: "")
     }
 }
 
@@ -34,7 +34,7 @@ struct FiveSecondSource {
     static let url: URL = URL(fileURLWithPath: FiveSecondSource.path)
     
     static func getAudioItem() -> AudioItem {
-       return DefaultAudioItem(audioUrl: self.path, sourceType: .file, artworkUrl: "")
+       return DefaultAudioItem(id: "", audioUrl: self.path, sourceType: .file, artworkUrl: "")
     }
 }
 
@@ -44,7 +44,7 @@ struct FiveSecondSourceWithInitialTimeOfFourSeconds {
     
     static func getAudioItem() -> AudioItem {
         return DefaultAudioItemInitialTime(
-            audioUrl: self.path,
+         id: "", audioUrl: self.path,
             artist: "a",
             title: "a",
             albumTitle: "a",
