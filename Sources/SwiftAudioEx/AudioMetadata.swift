@@ -9,17 +9,17 @@ import Foundation
 
 public struct AudioMetaData {
    
-   let tags: String?
-   let prompt: String
-   let gptDescriptionPrompt: String?
-   let audioPromptId: String?
-   let history: String?
-   let concatHistory: String?
-   let type: String?
-   let duration: Double?
-   let refundCredits: Bool?
-   let stream: Bool?
-   let errorType: String?
+   public let tags: String?
+   public let prompt: String
+   public let gptDescriptionPrompt: String?
+   public let audioPromptId: String?
+   public let history: String?
+   public let concatHistory: String?
+   public let type: String?
+   public let duration: Double?
+   public let refundCredits: Bool?
+   public let stream: Bool?
+   public let errorType: String?
    
    public init(
       tags: String? = nil,
