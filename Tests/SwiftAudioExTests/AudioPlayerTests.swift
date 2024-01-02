@@ -128,7 +128,7 @@ class AudioPlayerTests: XCTestCase {
             title: "Title",
             albumTitle: "AlbumTitle",
             sourceType: .stream,
-            artworkUrl: ""
+            artworkUrl: "", metadata: .init(prompt: "")
         )
         audioPlayer.load(item: item, playWhenReady: true)
         
@@ -149,7 +149,7 @@ class AudioPlayerTests: XCTestCase {
         }
         
         let nonExistingUrl = "https://\(String.random(length: 100)).com/\(String.random(length: 100)).mp3"
-       let item = DefaultAudioItem(id: "", audioUrl: nonExistingUrl, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .stream, artworkUrl: "")
+       let item = DefaultAudioItem(id: "", audioUrl: nonExistingUrl, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .stream, artworkUrl: "", metadata: .init(prompt: ""))
         audioPlayer.load(item: item, playWhenReady: true)
         
         wait(for: [expectation], timeout: 10) // Adjust the timeout as needed
@@ -167,7 +167,8 @@ class AudioPlayerTests: XCTestCase {
             artist: "Artist",
             title: "Title",
             albumTitle: "AlbumTitle",
-            sourceType: .stream, artworkUrl: ""
+            sourceType: .stream, artworkUrl: "", 
+            metadata: .init(prompt: "")
         )
         
         audioPlayer.load(item: item, playWhenReady: true)
@@ -186,7 +187,8 @@ class AudioPlayerTests: XCTestCase {
             title: "Title",
             albumTitle: "AlbumTitle",
             sourceType: .stream,
-            artworkUrl: ""
+            artworkUrl: "",
+            metadata: .init(prompt: "")
         )
         
         audioPlayer.load(item: item, playWhenReady: true)
@@ -205,7 +207,8 @@ class AudioPlayerTests: XCTestCase {
             title: "Title",
             albumTitle: "AlbumTitle",
             sourceType: .stream, 
-            artworkUrl: ""
+            artworkUrl: "",
+            metadata: .init(prompt: "")
         )
         
         audioPlayer.load(item: item, playWhenReady: true)
@@ -222,7 +225,7 @@ class AudioPlayerTests: XCTestCase {
         }
         
         let nonExistingUrl = "https://\(String.random(length: 100)).com/\(String.random(length: 100)).mp3"
-       let failItem = DefaultAudioItem(id: "", audioUrl: nonExistingUrl, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .stream, artworkUrl: "")
+       let failItem = DefaultAudioItem(id: "", audioUrl: nonExistingUrl, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .stream, artworkUrl: "", metadata: .init(prompt: ""))
         
         audioPlayer.load(item: failItem, playWhenReady: false)
         waitTrue(didReceiveFail, timeout: 5)
@@ -241,7 +244,7 @@ class AudioPlayerTests: XCTestCase {
         }
         
         let nonExistingUrl = "https://\(String.random(length: 100)).com/\(String.random(length: 100)).mp3"
-       let item = DefaultAudioItem(id: "", audioUrl: nonExistingUrl, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .stream, artworkUrl: "")
+       let item = DefaultAudioItem(id: "", audioUrl: nonExistingUrl, artist: "Artist", title: "Title", albumTitle: "AlbumTitle", sourceType: .stream, artworkUrl: "", metadata: .init(prompt: ""))
         
         audioPlayer.load(item: item, playWhenReady: true)
         waitTrue(didReceiveFail, timeout: 5)
